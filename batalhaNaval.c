@@ -10,46 +10,46 @@ int main() {
     int tabuleiro[10][10] = {0}; // matriz 10x10 inicializada com zeros
 
     //Navio 1 - Vertical 
-    int navio1_c[3] = {3, 3, 3}; 
-    int navio1_r[3] = {2, 3, 4}; /* linhas 0-based (C=2, D=3, E=4) */
+    int navio1_c[3] = {3, 3, 3}; // Coluna D
+    int navio1_r[3] = {2, 3, 4}; // Linhas 3, 4, 5
 
     /* Posiciona o Navio 1 no tabuleiro com valor 3 */
     for (int i = 0; i < 3; i++) {
         tabuleiro[navio1_r[i]][navio1_c[i]] = 3;
     }
 
-    /* Imprime coordenadas do navio 1 no formato número+letra (ex: 4C) */
-    printf("Navio 1 coordenadas: ");
-    for (int i = 0; i < 3; i++) {
-        int num = navio1_c[i] + 1;       /* 1-based */
-        char letra = 'A' + navio1_r[i]; /* letra da linha */
-        printf("%d%c ", num, letra);
-    }
-    printf("\n\n");
-
     // Navio 2 - Horizontal
-    int navio2_c[3] = {5, 6, 7}; 
-    int navio2_r[3] = {5, 5, 5};
+    int navio2_c[3] = {5, 6, 7}; // Colunas F, G, H
+    int navio2_r[3] = {5, 5, 5}; // Linhas 6, 6, 6
 
     /* Posiciona o Navio 2 no tabuleiro com valor 3 */
     for (int i = 0; i < 3; i++) {
         tabuleiro[navio2_r[i]][navio2_c[i]] = 3;
     }
 
-    /* Imprime coordenadas do navio 2 no formato número+letra (ex: 6F) */
-    printf("Navio 2 coordenadas: ");
-    for (int i = 0; i < 3; i++) {
-        int num = navio2_c[i] + 1;       /* 1-based */
-        char letra = 'A' + navio2_r[i]; /* letra da linha */
-        printf("%d%c ", num, letra);
-    }
-    printf("\n\n");
+    // Navio 3 - Diagonal
+    int navio3_c[3] = {0, 1, 2}; // Colunas A, B, C
+    int navio3_r[3] = {7, 8, 9}; // Linhas 8, 9, 10
 
-    /* Imprime o tabuleiro: cabeçalho de colunas e linhas A..J à esquerda */
+    /* Posiciona o Navio 3 no tabuleiro com valor 3 */
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[navio3_r[i]][navio3_c[i]] = 3;
+    }
+
+    // Navio 4 - Diagonal Invertida
+    int navio4_c[3] = {9, 8, 7}; // Colunas J, I, H
+    int navio4_r[3] = {0, 1, 2}; // Linhas 1, 2, 3
+
+    /* Posiciona o Navio 4 no tabuleiro com valor 3 */
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[navio4_r[i]][navio4_c[i]] = 3;
+    }
+
+    /* Imprime o tabuleiro */
     printf("   ");
-    for (int x = 0; x < 10; x++) printf(" %s ", linha[x]);
+    for (int x = 0; x < 10; x++) printf(" %s ", linha[x]); // colunas A-J
     printf("\n");
-    for (int y = 0; y < 10; y++) {
+    for (int y = 0; y < 10; y++) { // linhas 1-10
         printf("%2d ", y + 1);
         for (int x = 0; x < 10;  x++) {
             printf("%2d ", tabuleiro[y][x]);
