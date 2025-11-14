@@ -7,9 +7,20 @@
 int main() {
     // Nível Novato - Posicionamento dos Navios
     // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
-    int tabuleiro [10][10];
-    for (int i = 0; i<10; i++) {
-        }
+    char *linha[10] = {"A","B","C","D","E","F","G","H","I","J"};
+    int tabuleiro[10][10] = {0}; // ou preencha com o loop acima
+
+    printf("   ");
+    for (int x = 0; x < 10; x++) printf(" %s ", linha[x]);
+    printf("\n");
+    for (int y = 0; y < 10; y++) {
+    printf("%2d ", y + 1);
+    for (int x = 0; x < 10; x++) {
+        printf("%2d ", tabuleiro[y][x]); 
+    }
+    printf("\n");
+    }
+
     // Sugestão: Posicione dois navios no tabuleiro, um verticalmente e outro horizontalmente.
     // Sugestão: Utilize `printf` para exibir as coordenadas de cada parte dos navios.
 
