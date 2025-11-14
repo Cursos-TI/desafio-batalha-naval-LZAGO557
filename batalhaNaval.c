@@ -6,16 +6,14 @@
 
 int main() {
     // Nível Novato - Posicionamento dos Navios
-    // Sugestão: Declare uma matriz bidimensional para representar o tabuleiro (Ex: int tabuleiro[5][5];).
     char *linha[10] = {"A","B","C","D","E","F","G","H","I","J"};
     int tabuleiro[10][10] = {0}; // matriz 10x10 inicializada com zeros
 
-    /* Escolhi as coordenadas do Navio 1: 4C, 4D, 4E (formato número+letra)
-       Isso corresponde a coluna = 4 (1-based) e linhas C,D,E. */
-    int navio1_c[3] = {3, 3, 3}; /* colunas 0-based (4 -> index 3) */
+    //Navio 1 - Vertical 
+    int navio1_c[3] = {3, 3, 3}; 
     int navio1_r[3] = {2, 3, 4}; /* linhas 0-based (C=2, D=3, E=4) */
 
-    /* Posiciona o navio no tabuleiro com valor 3 */
+    /* Posiciona o Navio 1 no tabuleiro com valor 3 */
     for (int i = 0; i < 3; i++) {
         tabuleiro[navio1_r[i]][navio1_c[i]] = 3;
     }
@@ -25,6 +23,24 @@ int main() {
     for (int i = 0; i < 3; i++) {
         int num = navio1_c[i] + 1;       /* 1-based */
         char letra = 'A' + navio1_r[i]; /* letra da linha */
+        printf("%d%c ", num, letra);
+    }
+    printf("\n\n");
+
+    // Navio 2 - Horizontal
+    int navio2_c[3] = {5, 6, 7}; 
+    int navio2_r[3] = {5, 5, 5};
+
+    /* Posiciona o Navio 2 no tabuleiro com valor 3 */
+    for (int i = 0; i < 3; i++) {
+        tabuleiro[navio2_r[i]][navio2_c[i]] = 3;
+    }
+
+    /* Imprime coordenadas do navio 2 no formato número+letra (ex: 6F) */
+    printf("Navio 2 coordenadas: ");
+    for (int i = 0; i < 3; i++) {
+        int num = navio2_c[i] + 1;       /* 1-based */
+        char letra = 'A' + navio2_r[i]; /* letra da linha */
         printf("%d%c ", num, letra);
     }
     printf("\n\n");
