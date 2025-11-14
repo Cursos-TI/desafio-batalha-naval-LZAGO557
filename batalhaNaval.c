@@ -44,7 +44,7 @@ int main() {
     for (int i = 0; i < 3; i++) {
         tabuleiro[navio4_r[i]][navio4_c[i]] = 3;
     }
-
+    
     /* Imprime o tabuleiro */
     printf("   ");
     for (int x = 0; x < 10; x++) printf(" %s ", linha[x]); // colunas A-J
